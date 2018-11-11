@@ -1,5 +1,11 @@
 # TourOfHeros
 
+This is the basic tutorial from the angular official documentation
+
+Now all the boring stuff ...
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
 
 ## Development server
