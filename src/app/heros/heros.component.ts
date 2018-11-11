@@ -15,11 +15,16 @@ Heros data propgated form 'mock-heros' file
 })
 export class HerosComponent implements OnInit {
 
+  selectedHeo :Hero;
   heros = HEROES;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(hero){
+    this.selectedHero=hero;
   }
 
 }
