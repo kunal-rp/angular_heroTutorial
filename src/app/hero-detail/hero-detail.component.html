@@ -1,6 +1,7 @@
 <!--
 This will the supplamentary view to display more info about the hero selected from the list
 -->
+<button (click)="goBack()">go back</button>
 <div *ngIf="hero">
   <label>
     name: <input [(ngModel)] = "hero.name" placeholder="name">
@@ -9,3 +10,4 @@ This will the supplamentary view to display more info about the hero selected fr
   <div><span>Id:</span>{{hero.id}}</div>
   <div><span>Name:</span>{{hero.name}}</div>
 </div>
+<button (click)="save()">save</button>
