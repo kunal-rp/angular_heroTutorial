@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Hero} from '../hero'
 
-import {HEROES} from '../mock-heros'
+import {HeroService} from '../hero.service'
 
 /*
 This component will list out all heros and their Details
@@ -16,11 +16,16 @@ Heros data propgated form 'mock-heros' file
 export class HerosComponent implements OnInit {
 
   selectedHero: Hero;
-  heroes = HEROES;
+  heroes:Hero[];
 
-  constructor() { }
+  constructor(private heroService: HeroService) { }
+
+  getHeroes(): void{
+    this.heroService.getHeroes().subscribe(heroes => this.heroes=heroes);
+  }
 
   ngOnInit() {
+    this.getHeroes();
   }
 
   onSelect(hero):void{
