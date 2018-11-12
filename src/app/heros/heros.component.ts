@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Hero} from '../hero'
 
 import {HeroService} from '../hero.service'
+import { MessagesService } from '../messages.service';
 
 /*
 This component will list out all heros and their Details
@@ -18,7 +19,7 @@ export class HerosComponent implements OnInit {
   selectedHero: Hero;
   heroes:Hero[];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService,public messageService: MessagesService) { }
 
   getHeroes(): void{
     this.heroService.getHeroes().subscribe(heroes => this.heroes=heroes);
@@ -29,6 +30,7 @@ export class HerosComponent implements OnInit {
   }
 
   onSelect(hero):void{
+    this.messageService.add('Hero Selected: '+hero.name);
     this.selectedHero = hero;
   }
 
